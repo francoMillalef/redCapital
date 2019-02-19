@@ -24,9 +24,7 @@ Respuestas Test RedCapital
 	a) ventajas :
 		1.- Se trabajan las entidades del modelo más naturalmente como objetos.
 		2.- Aislamiento de trabajo con SQL
-	b) desventajas:
-		1.- 
-	
+
 6.- a) php artisan make:controller NombreController 
 	b) php artisan make:seeder NombreSeeder
 	c) el metodo all() devuelve una collecion de datos , mientras find retorna un unico modelo.
