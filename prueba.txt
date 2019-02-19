@@ -1,0 +1,32 @@
+Respuestas Test RedCapital
+
+1.a) $query = DB::table('compra')
+				->join('detalle_compra', 'compra.id' , '=','detalle_compra.detalle_id')
+				->get();
+							
+1.b) $query = DB::(table('compra')
+			->join('detalle_compra', 'compra.id' , '=','detalle_compra.detalle_id')
+			->join('categoria','detalle_compra.categoria_id', '=', 'categoria.id')
+			->selectRaw(sum(compra.cantidad * detalle_compra.precio) as 'precio_total'))
+			->orderBy('categoria.nombre','DESC')
+			->get();
+
+2.-	En un sistema que contempla muchos cambios la herencia no es una metodogía muy adaptable.
+
+3.-	Por medio de las peticiones Http, laravel maneja las rutas registradas para asi llamar al controlador y metodo correspondiente. El cual este metodo realiza una tarea en especifico que es retornada a la vista correspondiente.
+
+4.- Route::prefix('pelicula')->group(function(){
+	  Route::get('{parametro}', function ($parametro) {
+	  })->where('parametro','drama|comedia||accion|terror');
+	});
+	
+5.-	ActiveRecord:
+	a) ventajas :
+		1.- Se trabajan las entidades del modelo más naturalmente como objetos.
+		2.- Aislamiento de trabajo con SQL
+	b) desventajas:
+		1.- 
+	
+6.- a) php artisan make:controller NombreController 
+	b) php artisan make:seeder NombreSeeder
+	c) el metodo all() devuelve una collecion de datos , mientras find retorna un unico modelo.
